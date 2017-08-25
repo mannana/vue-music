@@ -1,15 +1,44 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/page/index/index'
-
 Vue.use(Router)
+//webpack按需加载组件
+//个性推荐
+const recommend = r => require.ensure([], () => r(require('../page/recommend/index')), ' recommend')
+//精品歌单
+const songList = r => require.ensure([], () => r(require('../page/songList/index')), 'songList')
+//排行榜
+const topList = r => require.ensure([], () => r(require('../page/topList/index')), 'topList')
 
 export default new Router({
-  routes: [
+  routes: [{
+        path: '/',
+        name: 'index',
+        component: recommend
+    },
     {
-      path: '/',
-      name: 'index',
-      component: Index
+        path: '/recommend',
+        name: 'recommend',
+        component: recommend
+    },
+    {
+        path: '/songList',
+        name: 'songList',
+        component: songList
+     },
+     {
+         path: '/topList',
+         name: 'topList',
+         component: topList
+      }
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return {
+        x: 0,
+        y: 0
+      }
     }
-  ]
+  }
 })

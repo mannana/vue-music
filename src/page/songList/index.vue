@@ -1,17 +1,15 @@
 <template>
-    <div id="recommend" class="">
-        <HeaderNav tabIndex="0"></headerNav>
-        <Banner></Banner>
+    <div id="song-list" class="">
+        <HeaderNav tabIndex="1"></headerNav>
+        <h2>歌单</h2>
     </div>
 </template>
 <script>
     import HeaderNav from "../../components/header/header"
-    import Banner from "./banner"
     export default  {
         name: 'index',
         components: {
-            HeaderNav,
-            Carousel
+            HeaderNav
         },
         data() {
             return {

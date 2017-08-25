@@ -1,12 +1,12 @@
 <template>
     <div id="recommend" class="">
         <HeaderNav tabIndex="0"></headerNav>
-        <Banner></Banner>
+        <Carousel></Carousel>
     </div>
 </template>
 <script>
     import HeaderNav from "../../components/header/header"
-    import Banner from "./banner"
+    import Carousel from "./carousel"
     export default  {
         name: 'index',
         components: {
