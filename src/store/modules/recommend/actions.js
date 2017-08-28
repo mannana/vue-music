@@ -8,13 +8,13 @@ export default {
         //获取推荐歌单
         context.dispatch('get_Recommend_PrSongList');
         //获取独家放送
-        context.dispatch('get_Recommend_PrivateContxt');
+        // context.dispatch('get_Recommend_PrivateContxt');
         //获取最新音乐
-        // context.dispatch('get_Recommend_PrNewSong');
+        context.dispatch('get_Recommend_PrNewSong');
         //获取推荐MV
-        context.dispatch('get_Recommend_PrMV');
+        // context.dispatch('get_Recommend_PrMV');
         //获取主播电台
-        context.dispatch('get_Recommend_PrBCStation');
+        // context.dispatch('get_Recommend_PrBCStation');
     },
     //获取banner
     async get_Recommend_Banner(context) {

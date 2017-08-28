@@ -13,7 +13,6 @@
         },
         data() {
             return {
-
             }
         },
         computed: {},

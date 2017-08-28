@@ -9,7 +9,7 @@
         </div>
         <span class="iconfont icon-music">&#xe649;</span>
         </div>
-        <tab :line-width="2" bar-active-color="#d43c33" active-color='#d43c33' class="tabNaver">
+        <tab :line-width="3" bar-active-color="#d43c33" active-color='#d43c33' class="tabNaver">
           <tab-item @on-item-click="skipPage" :selected="tabIndex == 0">个性推荐</tab-item>
           <tab-item @on-item-click="skipPage" :selected="tabIndex == 1">歌单</tab-item>
           <tab-item @on-item-click="skipPage" :selected="tabIndex == 2">排行榜</tab-item>
@@ -57,10 +57,10 @@ import {Tab,TabItem} from 'vux'
 
 <style>
 
-    header{
-        width: 100%;
-        overflow: hidden;
-    }
+header{
+    width: 100%;
+    overflow: hidden;
+}
     .header-nav{
         width:90%;
         height: 100%;
@@ -102,10 +102,10 @@ import {Tab,TabItem} from 'vux'
     .icon-music{
         font-size: .48rem;
     }
-    .vux-tab{
-        height: .6rem;
+    header .vux-tab{
+        height: .7rem;
     }
-    .vux-tab .vux-tab-item{
-        line-height: .6rem;
+    header .vux-tab .vux-tab-item{
+        line-height: .7rem;
     }
 </style>

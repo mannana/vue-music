@@ -22,22 +22,10 @@
                 originNum: 0
             }
         },
-        created() {
-            //页面初始化
-            this.$store.dispatch('initRecommendPage');
-        },
         computed: {
             ...mapState({
                 //获取banner图
-                bannerList: state => state.recommend.bannerList,
-                //获取推荐歌单
-                PrSongList: state => state.recommend.PrSongList,
-                //获取独家放送
-                PrivateContxt: state => state.recommend.PrivateContxt,
-                //获取推荐Mv
-                PrMV: state => state.recommend.PrMV,
-                //获取主播电台
-                PrBCStation: state => state.recommend.PrBCStation
+                bannerList: state => state.recommend.bannerList
             })
         },
         methods: {

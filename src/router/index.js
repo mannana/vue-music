@@ -4,6 +4,8 @@ Vue.use(Router)
 //webpack按需加载组件
 //个性推荐
 const recommend = r => require.ensure([], () => r(require('../page/recommend/index')), ' recommend')
+//歌单详情
+const songListDetails = r => require.ensure([], () => r(require('../page/songListDetails/index')), 'songListDetails')
 //精品歌单
 const songList = r => require.ensure([], () => r(require('../page/songList/index')), 'songList')
 //排行榜
@@ -24,8 +26,11 @@ export default new Router({
         path: '/songList',
         name: 'songList',
         component: songList
-     },
-     {
+     }, {
+       path: '/songListDetails/:id',
+       name: 'songListDetails',
+       component: songListDetails
+    },{
          path: '/topList',
          name: 'topList',
          component: topList
