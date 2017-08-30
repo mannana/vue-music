@@ -4,7 +4,8 @@
         <span class="title">最新音乐</span>
     </h1>
     <ul>
-        <router-link class="song-item" v-for="(song,i) in PrNewSong" :key="i" tag="li" to="/">
+
+        <router-link class="song-item" v-for="(song,i) in PrNewSong" :key="i" tag="li" :to="{name:'songDetails',params:{id:song.id}}">
             <p class="song-name">{{song.name}}</p>
             <p class="song-info"><span v-for="(artist,i) in song.song.artists">{{artist.name}} <i v-show="i<song.song.artists.length-1">/</i></span> - <span class="song-name">{{song.name}}</span></p>
             <span class="iconfont play-btn">&#xe62f;</span>

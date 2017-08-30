@@ -8,6 +8,8 @@ const recommend = r => require.ensure([], () => r(require('../page/recommend/ind
 const songListDetails = r => require.ensure([], () => r(require('../page/songListDetails/index')), 'songListDetails')
 //精品歌单
 const songList = r => require.ensure([], () => r(require('../page/songList/index')), 'songList')
+//歌曲详情
+const songDetails = r => require.ensure([], () => r(require('../page/songDetails/index')), 'songDetails')
 //排行榜
 const topList = r => require.ensure([], () => r(require('../page/topList/index')), 'topList')
 
@@ -30,6 +32,10 @@ export default new Router({
        path: '/songListDetails/:id',
        name: 'songListDetails',
        component: songListDetails
+    },{
+      path: '/songDetails/:id',
+      name: 'songDetails',
+      component: songDetails
     },{
          path: '/topList',
          name: 'topList',
