@@ -4,7 +4,7 @@
         <span class="title">推荐歌单</span>
     </h1>
     <ul class="re-songList">
-        <router-link class="re-item" v-for="(item,i) in PrSongList" :key="i" tag="li" :to="{name:'songListDetails',params:{id:item.id}}">
+        <router-link v-if="PrSongList" class="re-item" v-for="(item,i) in PrSongList" :key="i" tag="li" :to="{name:'songListDetails',params:{id:item.id}}">
             <div class="re-box">
                 <span class="iconfont re-playcount">&#xe75a;
                     {{format.formatPlayCount(item.playCount)}}

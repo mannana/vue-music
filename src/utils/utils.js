@@ -88,9 +88,9 @@ export default {
     if (box.length > 1) {
       for (let i = 0; i < box.length; i++) {
         if (val >= box[i][0] && val <= box[i + 1][0]) {
-          return .6 - .3 * i + 'rem';
+          return .6 - .6 * i + 'rem';
         } else if (val >= box[box.length - 1][0]) {
-          return .6 - .3 * (box.length - 1) + 'rem';
+          return .6 - .6 * (box.length - 1) + 'rem';
         }
       }
     }

@@ -1,8 +1,7 @@
 <template>
-    <div id="songListDetails">
+    <div id="songListDetails" v-if="songListDetails">
         <div class="header" >
             <div class="header-bg" :style="bgUrl">
-
             </div>
             <div class="cover-box">
                 <p class="iconfont play-count">&#xe75a;<span class="count-num">{{format.formatPlayCount(songListDetails.playCount)}}</span></p>
@@ -25,7 +24,7 @@
         <div class="play-list">
             <h3 class="list-title">歌曲列表</h3>
             <ol class="songs">
-                <router-link class="song-item" v-for="(song,i) in songListDetails.tracks" :key="i" tag="li" to="/">
+                <router-link class="song-item" v-for="(song,i) in songListDetails.tracks" :key="i" tag="li" :to="{name:'songDetails',params:{id:song.id}}">
                     <span class="song-num">{{i}}</span>
                     <div class="song">
                         <p class="song-name">{{song.name}}</p>
@@ -90,7 +89,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
 .header{
     position: relative;
     display: flex;
@@ -171,12 +170,13 @@
     position: relative;
     height:1.5rem;
     overflow: hidden;
-    padding: .2rem .2rem .4rem .3rem;
+    padding: .2rem .2rem .3rem .3rem;
     line-height: .6rem;
     font-size: .28rem;
     color: #777;
     background: #f8f8f8;
 }
+
 .tag{
     border: .02rem solid #eee;
     padding:.06rem .14rem;

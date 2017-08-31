@@ -1,6 +1,6 @@
 <template>
     <div id="carousel" class="">
-        <swiper loop auto :aspect-ratio="300/800" dots-position="center">
+        <swiper v-if="bannerList" loop auto :aspect-ratio="300/800" dots-position="center">
             <swiper-item v-for="(item,i) in bannerList" :key="i">
                 <img width="100%" height="100%" v-lazy="item.pic">
             </swiper-item>
