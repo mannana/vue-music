@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-      <music></music>
+    <music></music>
+    <loading v-model="isLoading"></loading>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 import music from './components/music/music';
+import {Loading} from 'vux';
 export default {
-  name: 'app',
-  components: {
-    music
-  }
+    name: 'app',
+    components: {
+        music,
+        Loading
+    },
+    computed: {
+        isLoading() {
+            return this.$store.state.isLoading;
+        }
+    }
 }
 </script>
 

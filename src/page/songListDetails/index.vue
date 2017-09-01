@@ -86,6 +86,9 @@
             return {
 
             }
+        },
+        destroyed() {
+            this.$store.commit('set_isLoading', false);
         }
     }
 </script>

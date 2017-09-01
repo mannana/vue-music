@@ -10,8 +10,7 @@
                 </div>
             <div v-if="songDetails.songs[0]" class="song-info">
                 <p class="song-title">
-                    <span class="song-name">{{songDetails.songs[0].name}}</span>
-                    <span class="song-gap">-</span>
+                    <span v-if="songDetails.songs[0].name" class="song-name">{{songDetails.songs[0].name}} - </span>
                     <span class="song-autr" v-for="(artist,i) in songDetails.songs[0].ar">
                         {{artist.name}}<i v-show="i<article-1">/</i>
                     </span>
@@ -66,6 +65,7 @@ export default {
             this.$store.commit('set_playStatus', !this.playStatus);
         }
     }
+
 }
 </script>
 <style scoped>
@@ -78,9 +78,6 @@ export default {
     overflow: hidden;
 }
 
-.rotate{
-  animation: rotate 5s reverse infinite;
-}
 @keyframes rotate {
 
     from {

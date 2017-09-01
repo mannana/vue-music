@@ -13,7 +13,7 @@ export default {
   playList: [],
   //云音乐新歌榜
   cloudMusicNewTopList: [],
-  //云音乐热歌榜  
+  //云音乐热歌榜
   cloudMusicHotTopList: [],
   //云音乐飙升榜
   cloudMusicUpTopList: [],
@@ -23,6 +23,8 @@ export default {
   djListDetails: [],
   //搜索列表
   searchList: [],
+  //搜索建议列表
+  searchSuggestList: [],
   //歌手单曲
   singerSong: {
     'artist': {

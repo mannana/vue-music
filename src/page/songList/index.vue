@@ -16,7 +16,10 @@
             }
         },
         computed: {},
-        methods: {}
+        methods: {},
+        destroyed() {
+            this.$store.commit('set_isLoading', false);
+        }
     }
 </script>
 <style>

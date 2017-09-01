@@ -33,6 +33,8 @@ const apiList = {
     queryDjSub: "/dj/program",
     //搜索
     querySearch: "/search",
+    //推荐搜索
+    querySuggestSearch: "/search/suggest",
     //歌手单曲
     querySingerSong: "/artists",
     //歌手专辑

@@ -43,7 +43,14 @@ export default {
     })
   },
   //获取搜索列表
-  async get_SearchList(context, payload) {
+  async get_searchSuggestList(context, payload) {
+    context.commit('set_isLoading', true);
+    let res = await getData('querySuggestSearch', payload)
+    context.commit('set_searchSuggestList', res.data.result);
+    context.commit('set_isLoading', false);
+  },
+  //获取搜索列表
+  async get_searchList(context, payload) {
     context.commit('set_isLoading', true);
     let res = await getData('querySearch', payload)
     context.commit('set_searchList', res.data.result);
