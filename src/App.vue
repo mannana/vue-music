@@ -22,7 +22,11 @@ export default {
     }
 }
 </script>
-
 <style lang="less">
 @import './assets/style/reset';
+#app{
+    max-width: 8rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
 </style>

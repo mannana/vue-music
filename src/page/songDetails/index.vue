@@ -71,6 +71,8 @@ export default {
 <style scoped>
 #songDetails{
     position: absolute;
+    max-width: 8rem;
+    margin: 0 auto;
     top:0;
     left: 0;
     right: 0;

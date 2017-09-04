@@ -3,7 +3,7 @@
     <div id="searchList" :class="{page:!isScroll}" @scroll="handleScroll">
         <div class="search" :class="{fixed:isScroll}">
             <div class="search-box">
-                <input class="search-input" type="text" @blur="goSearch" v-model="searchVal" id="searchBoxs" placeholder="搜索音乐,歌词,电台">
+                <input class="search-input" type="text" @blur="goSearch" @keyup.enter="goSearch" v-model="searchVal" id="searchBoxs" placeholder="搜索音乐,歌词,电台">
             </div>
             <router-link class="cancelSearch" :to="{path:'/recommend'}">取消</router-link>
         </div>
@@ -29,9 +29,11 @@
 </template>
 
 <script>
+import SearchSongList from "../../components/songs/song"
 export default {
     name: 'searchList',
     components: {
+        SearchSongList
     },
     created() {
         this.searchVal = '';
@@ -82,17 +84,19 @@ export default {
 </script>
 <style scoped>
 .slide-fade-enter-active {
-  transition: all .5s ease;
+  transition: all .6s ease;
 }
 .slide-fade-leave-active {
-  transition: all .5s ease;
+  transition: all .3s ease;
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active for below version 2.1.8 */ {
-  transform: translateX(-100%);
+  transform: translateY(-100%);
 }
 #searchList{
     width: 100%;
+    max-width: 8rem;
+    margin: 0 auto;
     background: #f6f7f8;
 }
 .page{
@@ -111,8 +115,8 @@ export default {
 }
 .search{
     width: 100%;
+    max-width: 8rem;
     top: 0;
-    left: 0;
     height: .6rem;
     padding: .2rem 0;
     border-bottom: .02rem solid #f1f1fe;
@@ -121,6 +125,7 @@ export default {
 }
 .fixed{
     position: fixed;
+    background: rgb(90, 83, 109);
 }
 .search-box{
     width: 70%;
@@ -169,7 +174,7 @@ export default {
 .song-name{
     line-height: .5rem;
     width: 82%;
-    overflow: auto;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     color: #455;

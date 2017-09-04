@@ -10,9 +10,10 @@
 <script>
 
     import {Swiper, SwiperItem} from 'vux'
-    import {mapState} from "vuex"
+    // import {mapState} from "vuex"
     export default  {
         name: 'carousel',
+        props:["bannerList"],
         components: {
             Swiper,
             SwiperItem
@@ -21,12 +22,6 @@
             return {
                 originNum: 0
             }
-        },
-        computed: {
-            ...mapState({
-                //获取banner图
-                bannerList: state => state.recommend.bannerList
-            })
         },
         methods: {
           //获取触摸起点

@@ -1,25 +1,31 @@
 <template>
     <div id="song-list" class="">
         <HeaderNav tabIndex="1"></headerNav>
-        <h2>歌单</h2>
+        <SongList :data="songList"></SongList>
     </div>
 </template>
 <script>
     import HeaderNav from "../../components/header/header"
+    import SongList from "../../components/playlist/songList"
     export default  {
         name: 'index',
         components: {
-            HeaderNav
+            HeaderNav,
+            SongList
         },
         data() {
             return {
             }
         },
-        computed: {},
-        methods: {},
-        destroyed() {
-            this.$store.commit('set_isLoading', false);
-        }
+        created() {
+            this.$store.dispatch('get_playList', 'Boutique');
+        },
+        computed: {
+          songList() {
+            return this.$store.state.playList;
+          }
+        },
+        methods: {}
     }
 </script>
 <style>

@@ -1,5 +1,5 @@
 <template>
-    <div id="songListDetails" v-if="songListDetails">
+    <div id="songListDetails">
         <div class="header" >
             <div class="header-bg" :style="bgUrl">
             </div>
@@ -31,7 +31,6 @@
                         <p class="song-info"><span v-for="(artist,i) in song.ar">{{artist.name}} <i v-show="i<song.ar.length-1">/</i></span> - <span>{{song.name}}</span></p>
                         <span class="iconfont play-btn">&#xe62f;</span>
                     </div>
-
                 </router-link>
             </ol>
         </div>
@@ -42,6 +41,7 @@
         name: 'songListDetails',
         components: {},
         created() {
+            document.body.scrollTop = 0;
             this.$store.dispatch('get_songListDetails',{
                 id: this.$route.params.id
             });
@@ -86,9 +86,6 @@
             return {
 
             }
-        },
-        destroyed() {
-            this.$store.commit('set_isLoading', false);
         }
     }
 </script>

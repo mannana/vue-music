@@ -17,30 +17,9 @@ export default {
   },
   //设置云音乐官方排行榜
   set_cloudMusicTopList(state, payload) {
-    if (payload == '') {
-      state.cloudMusicNewTopList = {
-        id: 1
-      };
-      state.cloudMusicHotTopList = {
-        id: 1
-      };
-      state.cloudMusicUpTopList = {
-        id: 1
-      };
-      state.cloudMusicEleTopList = {
-        id: 1
-      };
-    } else {
-      if (payload.type == 0) {
-        state.cloudMusicNewTopList = payload.result;
-      } else if (payload.type == 1) {
-        state.cloudMusicHotTopList = payload.result;
-      } else if (payload.type == 3) {
-        state.cloudMusicUpTopList = payload.result;
-      } else {
-        state.cloudMusicEleTopList = payload.result;
+      if(payload.result){
+          state.cloudMusicTopList[payload.index]=payload.result;
       }
-    }
   },
   //设置电台节目
   set_djListDetails(state, payload) {

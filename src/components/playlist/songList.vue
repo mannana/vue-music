@@ -1,16 +1,17 @@
 <template>
     <div>
-    <h1 class="recommend-title">
-        <span class="title">推荐歌单</span>
+    <h1 v-if="title" class="recommend-title">
+        <span class="title">{{title}}</span>
     </h1>
     <ul class="re-songList">
-        <router-link v-if="PrSongList" class="re-item" v-for="(item,i) in PrSongList" :key="i" tag="li" :to="{name:'songListDetails',params:{id:item.id}}">
+        <router-link v-if="data" class="re-item" v-for="(item,i) in data" :key="i" tag="li" :to="{name:'songListDetails',params:{id:item.id}}">
             <div class="re-box">
                 <span class="iconfont re-playcount">&#xe75a;
                     {{format.formatPlayCount(item.playCount)}}
                     <i class="iconfont play">&#xe6df;</i>
                 </span>
-                <img class="re-img" v-lazy="item.picUrl">
+                <img v-if="item.picUrl" class="re-img" :src="item.picUrl" >
+                <img v-if="item.coverImgUrl" class="re-img" :src="item.coverImgUrl" >
 
             </div>
             <p class="re-name">{{item.name}}</p>
@@ -19,17 +20,11 @@
     </div>
 </template>
 <script>
-import {mapState} from 'vuex';
 export default{
     name: 're-songList',
+    props:["data","title"],
     data(){
         return {}
-    },
-    computed:{
-        ...mapState({
-          //获取推荐歌单
-          PrSongList: state => state.recommend.PrSongList
-        })
     }
 
 }
@@ -46,6 +41,7 @@ export default{
 }
 .re-songList{
     width: 100%;
+    margin-top: .4rem;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -54,6 +50,7 @@ export default{
 .re-box{
     position: relative;
     border-radius: .1rem;
+    height: 3.1rem;
     box-shadow: 2px 2px 6px #000;
     overflow: hidden;
 }

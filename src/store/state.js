@@ -11,6 +11,8 @@ export default {
   },
   //歌单列表
   playList: [],
+  //
+  cloudMusicTopList: [],
   //云音乐新歌榜
   cloudMusicNewTopList: [],
   //云音乐热歌榜

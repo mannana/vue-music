@@ -2,7 +2,7 @@
     <header>
         <div class="header-nav">
         <span class="iconfont search-micro">&#xe606;</span>
-        <div class="search-box">
+        <div class="search-box" @click="goSearch">
             <i class="iconfont search-icon">&#xe662;</i>
             <input type="text" class="search-input" placeholder="搜索音乐，歌词，电台"  @focus="goSearch" />
         </div>
