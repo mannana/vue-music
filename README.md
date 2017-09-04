@@ -1,7 +1,9 @@
 # vue-music
 
 > A Vue.js project
-
+## 后端网易云音乐API来源
+[api来源](https://github.com/Binaryify/NeteaseCloudMusicApi)
+感谢Binaryify对接口文档的不断维护与更新
 ## Build Setup
 
 ``` bash
